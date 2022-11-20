@@ -1,10 +1,13 @@
  const typeDefs = `#graphql
     type Query{
         greeting:String
+        getPost(id:ID!):Post
         getAllPosts:[Post]
     }
     type Mutation{
-        createPost(input:PostInput):Post
+        createPost(input:PostInput!):Post
+        deletePost(id:ID!):Post
+        updatePost(id:ID!,input:PostInput):Post
     }
 
     type Post{
